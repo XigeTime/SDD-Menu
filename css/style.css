@@ -1,0 +1,5 @@
+/* SDD-Menu CSS Styles */
+.dd-menu {display:block;cursor: pointer;}
+.dd-menu.r .dd-child{ left:0; }
+.dd-menu.l .dd-child{ right:0; }
+.dd-menu-container { position:relative; }
