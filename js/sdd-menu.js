@@ -1,13 +1,15 @@
+
 // Simple dropdown menu - Easy to use 
 // Designed by xigeti.me - forumonic.com
-function expandIt() {     
+
+function expandDDMenu() {     
   var id = $(this).attr("id"), // Get elements ID.
       child = $(this).children(".dd-child"), // Find child dropdown element.
-      parent = $(this).parent().hasClass("dd-menu-inline"),
-      open = $(".dd-menu.open").length; // Check if is inline menu.
-  
+      parent = $(this).parent().hasClass("dd-menu-container"), // Check if has dd-container.
+      open = $(".dd-menu.dd-open").length; // Check if any menus are currently open.
+    
   if ( open > 0 ) {
-    collapseAll()
+    collapseDDMenu() // Close open menus.
   }
 
   if (parent) {
@@ -26,18 +28,19 @@ function expandIt() {
     start: function () { $(this).css(sty) }
   });
   $(this).addClass("open");
-  $(this).one("click", collapseAll); // Set next click function
+  $(this).addClass("dd-open");
+  $(this).one("click", collapseDDMenu); // Set next click function
   event.stopPropagation();
 };
 
-function collapseAll() {
-  $(".dd-menu.open").removeClass("open").one("click", expandIt).children(".dd-child").slideUp();
+function collapseDDMenu() {
+  $(".dd-menu.dd-open").removeClass("dd-open").one("click", expandDDMenu).children(".dd-child").slideUp().removeClass("o");
 };
 $(window).click(function() { 
-  $(".dd-menu.open").removeClass("open").one("click", expandIt);
+  $(".dd-menu.dd-open").removeClass("dd-open").one("click", expandDDMenu).children(".dd-child").slideUp().removeClass("o"); 
   $(".dd-child").slideUp(); 
 }); // Close menus when clicked outside element & set next click function
 
 $(document).ready(function() {
-  $(".dd-menu").one("click", expandIt); // Call the plugin
+  $(".dd-menu").one("click", expandDDMenu); // Call the plugin
 })
