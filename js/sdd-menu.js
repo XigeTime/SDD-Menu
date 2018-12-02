@@ -19,18 +19,27 @@ function expandDDMenu() {
   }
 
   if ( $(this).hasClass("t") ) {
-    var sty = { "bottom": pos,"display":"block" };
+    var style = { "bottom": pos,"display":"block" };
   } else {
-    var sty = { "top": pos,"display":"block" };
-  }
+    var style = { "top": pos,"display":"block" };
+  } // If dropdown is set to top
 
   child.slideDown({
-    start: function () { $(this).css(sty) }
+    start: function () { $(this).css(style) }
   });
-  $(this).addClass("open");
+
   $(this).addClass("dd-open");
+  child.addClass("o");
   $(this).one("click", collapseDDMenu); // Set next click function
   event.stopPropagation();
+
+  var bounding = document.querySelector(".dd-child.o").getBoundingClientRect(); // Get elements co-ordinates & check if is inside viewport
+  if (bounding.left < 0) {
+    $("#" + id).addClass("r"); // Element is outside of viewport on left side
+  }
+  if (bounding.right > (window.innerWidth || document.documentElement.clientWidth)) {
+    $("#" + id).addClass("l"); // Element is outside of viewport on right side
+  }
 };
 
 function collapseDDMenu() {
@@ -38,7 +47,6 @@ function collapseDDMenu() {
 };
 $(window).click(function() { 
   $(".dd-menu.dd-open").removeClass("dd-open").one("click", expandDDMenu).children(".dd-child").slideUp().removeClass("o"); 
-  $(".dd-child").slideUp(); 
 }); // Close menus when clicked outside element & set next click function
 
 $(document).ready(function() {
