@@ -35,10 +35,12 @@ function expandDDMenu() {
 
   var bounding = document.querySelector(".dd-child.o").getBoundingClientRect(); // Get elements co-ordinates & check if is inside viewport
   if (bounding.left < 0) {
-    $("#" + id).addClass("r"); // Element is outside of viewport on left side
+    $("#" + id).removeClass("r").addClass("l"); // Element is outside of viewport on left side
+    console.log("out left")
   }
   if (bounding.right > (window.innerWidth || document.documentElement.clientWidth)) {
-    $("#" + id).addClass("l"); // Element is outside of viewport on right side
+    $("#" + id).removeClass("l").addClass("r"); // Element is outside of viewport on right side
+    console.log("out right")
   }
 };
 
