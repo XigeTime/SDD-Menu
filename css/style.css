@@ -1,5 +1,23 @@
 /* SDD-Menu CSS Styles */
-.dd-menu {display:block;cursor: pointer;}
-.dd-menu.r .dd-child{ left:0; }
-.dd-menu.l .dd-child{ right:0; }
+.dd-menu {display:inline-block;cursor: pointer;}
 .dd-menu-container { position:relative; }
+.dd-menu-container .dd-menu {position:relative;}
+.dd-menu.r .dd-child{ right:0; }
+.dd-menu.l .dd-child{ left:0; }
+.dd-child {
+    display: none;
+    position: absolute;
+    background: #fdfdfd;
+    min-width:200px;
+    line-height: 15px;
+    z-index: 1;
+    -moz-box-shadow: 0 0 2px #969595;
+    -webkit-box-shadow: 0 0 2px #969595;
+    box-shadow: 0 0 2px #969595
+}
+
+/*DEMO STYLE*/
+
+.demo1 {
+	height:50px;position:relative;background:#efefef;display:inline-block;
+}
