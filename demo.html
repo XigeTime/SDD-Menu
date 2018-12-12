@@ -1,76 +1,102 @@
 <html>
-  <head>
-  	<title>Simple Drop Down Menu</title>
-  	<link rel="stylesheet" href="css/style.css"/>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="js/sdd-menu.min.js"></script>
-  </head>
-  <body>
-
-  	<h1>Simple dropdown menu by Harry K.</h1>
-
-  	<p>Here is an example where the dropdown content is attached to it's individual link.</p>
-    <div class="dd-menu-container" style="height:50px;background:#efefef;">	
-      <span class="dd-menu" id="menu1">
-        My Dropdown Menu,
-        <div class="dd-child">
-          Dropdown content
-        </div>
-      </span> &nbsp;
-      <span class="dd-menu" id="menu2">
-      	My Second Dropdown,
-        <div class="dd-child">
-          Dropdown content 2
-        </div>
-      </span> &nbsp;
-      <span class="dd-menu" id="menu3">
-      	My Third Dropdown,
-        <div class="dd-child">
-          Dropdown content 3
-        </div>
-      </span>
-      <span class="dd-menu" id="menu4">
-      	My left side Dropdown,
-        <div class="dd-child">
-          I have the "l" class.
-        </div>
-      </span>
-      <span class="dd-menu" id="menu5">
-      	My right side Dropdown,
-        <div class="dd-child">
-          I have the "r" class.
-        </div>
-      </span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link rel="stylesheet" href="css/style.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+  <title>Simple Drop Down Menu</title>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="logo">SSD-Menu</div>
+      <div class="nav">
+        <a href="" class="active">Installation</a>
+        <a href="">How to use</a>
+        <a href="">Credits</a>
+      </div>
     </div>
-
-    <hr />
-
-    <p>Here is an example where the dropdown content is attached to it's parent container.</p>
-    <div class="demo1">
-      <span class="dd-menu" id="menu6">
-        My Dropdown Menu,
-        <div class="dd-child">
-          Dropdown content 4
-        </div>
-      </span>
-      <span class="dd-menu" id="menu7">
-        My Dropdown Menu,
-        <div class="dd-child">
-          Dropdown content 5
-        </div>
-      </span>
-      <span class="dd-menu l" id="menu8">
-      	My left side Dropdown,
-        <div class="dd-child">
-          I have the "l" class.
-        </div>
-      </span>
-      <span class="dd-menu r" id="menu9">
-      	My right side Dropdown,
-        <div class="dd-child">
-          I have the "r" class.
-        </div>
-      </span>
   </div>
-  </body>
+  <div class="container">
+            
+
+
+
+
+
+        <div class="bit">
+          <p>
+            Here is an example where the dropdown content is attached to it's individual link.<br />
+            You don't have to set a "href" attribute, however if you do in the event the user doesn't have JavaScript enabled it will default to a normal behaving link.
+          </p>
+          <a href="/page" class="dd-menu" id="menu454523">
+            Dropdown
+            <div class="dd-child">
+              Dropdown child container
+            </div>
+          </a>
+          <p>You can attach a dropdown onto most HTML tags</p>
+          <span class="dd-menu highlight" id="menu1">
+            I am a "span" tag, click me!
+            <div class="dd-child">
+              Dropdown content
+            </div>
+          </span> &nbsp;
+          <span class="dd-menu highlight" id="menu2">
+            I'm a "div" tag, try me!
+            <div class="dd-child">
+              Dropdown content 2
+            </div>
+          </span>
+        </div>
+        <hr />
+        <p>Here is an example where the dropdown content is attached to it's parent container.</p>
+        <div class="dd-menu-container">
+          <span class="dd-menu" id="menu6">
+            My Dropdown Menu,
+            <div class="dd-child">
+              Dropdown content 4
+            </div>
+          </span>
+          <span class="dd-menu" id="menu7">
+            My Dropdown Menu,
+            <div class="dd-child">
+              Dropdown content 5
+            </div>
+          </span>
+          <span class="dd-menu l" id="menu8">
+            My left side Dropdown,
+            <div class="dd-child">
+              I have the "l" class.
+            </div>
+          </span>
+          <span class="dd-menu r" id="menu9">
+            My right side Dropdown,
+            <div class="dd-child">
+              I have the "r" class.
+            </div>
+          </span>
+        </div>
+        <hr />
+        <p>A dropdown that appears above the trigger.</p>
+        <div class="demo1">
+          <span class="dd-menu t" id="menu4556">
+            My Dropdown Menu,
+            <div class="dd-child">
+              Dropdown content 4
+            </div>
+          </span>
+        </div>
+      </div>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+    });
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/sdd-menu.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
 </html>
