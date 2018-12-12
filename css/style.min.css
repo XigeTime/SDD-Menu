@@ -21,37 +21,6 @@ body {
   font-size: 100%;
 }
 
-.container {
-  width: 100%;
-  max-width: 1150px;
-  margin: auto;
-}
-@media (max-width: 1150px) {
-  .container {
-    font-size: 1.4vw;
-  }
-}
-.container .bit {
-  background: #f9f9f9;
-  padding: 5px;
-  border-radius: 3px;
-}
-.container .bit .highlight {
-  padding: 2px 25px 2px 5px;
-  background: #44a9d2;
-  color: #fff;
-  border-radius: 3px;
-  position: relative;
-}
-.container .bit .highlight:before {
-  content: "V";
-  position: absolute;
-  right: 9.5px;
-  top: 6px;
-  font-size: 0.7em;
-  font-weight: 900;
-}
-
 .header .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,7 +30,7 @@ body {
           align-items: center;
 }
 .header .container a {
-  color: #44a9d2;
+  color: #989898;
 }
 .header .container .logo {
   font-size: 4em;
@@ -77,18 +46,54 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
-.header .container .nav a.active {
+.header .container .nav a:hover {
+  background: #f1f1f1;
+}
+.header .container .nav a.active, .header .container .nav a:active {
   background: #44a9d2;
   color: #ffffff;
 }
 
-.dd-menu-container {
-  height: 50px;
-  background: #efefef;
-  display: inline-block;
+.container {
+  width: 100%;
+  max-width: 1150px;
+  margin: auto;
 }
-
-.waves-effect {
-  position: initial;
+@media (max-width: 1150px) {
+  .container {
+    font-size: 1.4vw;
+  }
+}
+.container .bit {
+  background: #f9f9f9;
+  padding: 5px;
+  border-radius: 3px;
+}
+.container .bit a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #a0a0a0;
+  -webkit-transition: border-color .3s;
+  transition: border-color .3s;
+}
+.container .bit a:hover {
+  border-color: #111;
+}
+.container .bit .highlight {
+  padding: 2px 25px 2px 5px;
+  background: #44a9d2;
+  color: #fff;
+  border-radius: 3px;
+  position: relative;
+}
+.container .bit .highlight:before {
+  content: "V";
+  position: absolute;
+  right: 9.5px;
+  top: 6px;
+  font-size: 0.7em;
+  font-weight: 900;
 }

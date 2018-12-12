@@ -19,7 +19,7 @@ function expandDDMenu(event) {
     var height = coOrdinates.height; // Get height of dd-menu element.
   }
 
-  if ( $(this).css("position") === "relative" ) {
+  if ( $(this).css("position") === "relative" && parent == false) {
     if ( $(this).hasClass("t") ) {
       var style = { "bottom": height,"display":"block" };
     } else {

@@ -23,40 +23,12 @@ body {
 	font-family: $font;
 	font-size: 100%;
 }
-.container {
-	width: 100%;
-	max-width: 1150px;
-	margin: auto;
-	@media #{$break1} {
-		font-size: 1.4vw;
-	}
-	.bit {
-		background: #f9f9f9;
-		padding: 5px;
-		border-radius: 3px;
-		.highlight {
-			padding: 2px 25px 2px 5px;
-			background:$color;
-			color: #fff;
-			border-radius: 3px;
-			position: relative;
-			&:before {
-			    content: "V";
-			    position: absolute;
-			    right: 9.5px;
-			    top: 6px;
-			    font-size: 0.7em;
-			    font-weight: 900;
-			}
-		}
-	}
-}
 .header {
 	.container {
 		display: flex;
 		align-items: center;
 		a {
-			color: $color;
+			color: #989898;
 		}
 		.logo {
 			font-size: 4em;
@@ -71,7 +43,11 @@ body {
 			    text-decoration: none;
 			    text-transform: uppercase;
 			    font-weight: 600;
-			    &.active {
+			    transition: all .3s;
+			    &:hover {
+			    	background: #f1f1f1;
+			    }
+			    &.active,&:active {
 					background: $color;
 					color: #ffffff;
 			    }
@@ -79,11 +55,40 @@ body {
 		}
 	}
 }
-.dd-menu-container {
-	height: 50px;
-	background: #efefef;
-	display: inline-block;
-}
-.waves-effect {
-	position: initial;
+.container {
+	width: 100%;
+	max-width: 1150px;
+	margin: auto;
+	@media #{$break1} {
+		font-size: 1.4vw;
+	}
+	.bit {
+		background: #f9f9f9;
+		padding: 5px;
+		border-radius: 3px;
+		a {
+			color: #333;
+		    text-decoration: none;
+		    border-bottom: 1px solid #a0a0a0;
+		    transition: border-color .3s;
+		    &:hover {
+		    	border-color: #111;
+		    }
+		}
+		.highlight {
+			padding: 2px 25px 2px 5px;
+			background: $color;
+			color: #fff;
+			border-radius: 3px;
+			position: relative;
+			&:before {
+			    content: "V";
+			    position: absolute;
+			    right: 9.5px;
+			    top: 6px;
+			    font-size: 0.7em;
+			    font-weight: 900;
+			}
+		}
+	}
 }
